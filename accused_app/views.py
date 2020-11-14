@@ -1,18 +1,22 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
-
-# Create your views here.
 from django.utils import timezone
-
+from django.views.decorators.csrf import csrf_exempt
 from accused_app.models import Accused
 
 
+# Create your views here.
+
+
+@csrf_exempt
 def index_accused(req):
-    return HttpResponse('index_accused')
+    return JsonResponse({
+        'page': 'index accused'
+    })
 
 
 def create_accused(req):
-    return HttpResponse('create_accused')
+    return render(req, 'accused_app/create.html')
 
 
 def update_accused(req, accused_id):
