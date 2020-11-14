@@ -21,3 +21,6 @@ class Rule(models.Model):
     vehicle_driver = models.CharField(max_length=500)
     description = models.CharField(max_length=500)
     created_at = models.CharField(max_length=500)
+
+    class Meta:
+        db_table = 'rules'

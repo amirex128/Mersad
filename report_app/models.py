@@ -17,3 +17,6 @@ class Patrol(models.Model):
     time_started_at = models.CharField(max_length=500)
     time_ended_at = models.CharField(max_length=500)
     places = models.CharField(max_length=500)
+
+    class Meta:
+        db_table = 'report_patrols'

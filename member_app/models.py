@@ -6,7 +6,7 @@ from django.db import models
 class Member(models.Model):
     first_name = models.CharField(max_length=500)
     last_name = models.CharField(max_length=500)
-    nation_code = models.IntegerField( unique=True)
+    nation_code = models.IntegerField(unique=True)
     responsibility = models.CharField(max_length=500, null=True)
     type_team = models.CharField(max_length=500, null=True)
     birthday = models.DateField(null=True)
@@ -21,9 +21,8 @@ class Member(models.Model):
     equipment = models.CharField(max_length=500, default='تونفا')
     serial_equipment = models.CharField(max_length=500, default='1')
 
+    class Meta:
+        db_table = 'members'
+
     def __str__(self):
-        return self.first_name+' '+self.last_name
-
-
-
-
+        return self.first_name + ' ' + self.last_name

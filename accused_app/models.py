@@ -14,6 +14,9 @@ class Accused(models.Model):
     address = models.CharField(max_length=1000, null=True)
     arrest_at = models.DateTimeField()
 
+    class Meta:
+        db_table = 'accuseds'
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
@@ -23,6 +26,9 @@ class Crime(models.Model):
     description = models.TextField(null=True)
     address = models.CharField(max_length=1000, null=True)
     accused = models.ForeignKey(Accused, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'crimes'
 
     def __str__(self):
         return self.title
