@@ -4,12 +4,16 @@ from django.contrib import admin
 from accused_app.models import Accused, Crime
 
 
+class CrimeInline(admin.TabularInline):
+    extra = 1
+    model = Crime
+
+
 @admin.register(Accused)
 class AccusedAdmin(admin.ModelAdmin):
-    pass
+    inlines = [CrimeInline]
 
 
 @admin.register(Crime)
 class CrimeAdmin(admin.ModelAdmin):
     pass
-
