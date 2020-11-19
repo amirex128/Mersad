@@ -1,7 +1,11 @@
+import datetime
+
 from django.db import models
 
-
 # Create your models here.
+from django.utils import timezone
+
+
 class Patrol(models.Model):
     team_realm = models.CharField(max_length=500)
     team_base = models.CharField(max_length=500)
@@ -14,8 +18,8 @@ class Patrol(models.Model):
     area = models.CharField(max_length=500)
     realm = models.CharField(max_length=500)
     teams = models.CharField(max_length=500)
-    time_started_at = models.CharField(max_length=500)
-    time_ended_at = models.CharField(max_length=500)
+    time_started_at = models.TimeField(auto_now_add=True, null=True)
+    time_ended_at = models.TimeField(default=timezone.now() + datetime.timedelta(hours=12), null=True)
     places = models.CharField(max_length=500)
 
     class Meta:

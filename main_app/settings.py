@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'accused_app',
     'member_app',
     'rule_app',
-    'report_app'
+    'report_app',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -103,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tehran'
 
@@ -116,7 +117,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# Base url to serve static files
 STATIC_URL = '/static/'
+# Path where static is stored
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+SHELL_PLUS_PRINT_SQL = True
+# SHELL_PLUS = "notebook"
+RUNSERVERPLUS_SERVER_ADDRESS_PORT = '0.0.0.0:8000'

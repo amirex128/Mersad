@@ -2,5 +2,28 @@
 
 
 {% block content %}
-aaaaaaaaaaa
+
+    <form method="post" action="{% url 'accused:create' %}">
+        {% csrf_token %}
+        {% for field in form %}
+
+            <div class="form-outline">
+                {% if field.name == 'image' %}
+                    <div class="form-file mb-3 ">
+                        {{ field }}
+
+                        <label class="form-file-label" for="{{ field.id_for_label }}">
+                            <span class="form-file-text">{{ field.label }}</span>
+                            <span class="form-file-button">مرور در فایل ها</span>
+                        </label>
+                    </div>
+                {% else %}
+                    {{ field }}
+                    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {% endif %}
+
+            </div>
+
+        {% endfor %}
+    </form>
 {% endblock %}

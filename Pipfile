@@ -7,6 +7,16 @@ name = "pypi"
 django = "*"
 pillow = "*"
 faker = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
+django-guardian = "*"
+ipython = "*"
+notebook = "*"
+django-extensions = "*"
+jupyter = "*"
+werkzeug = "*"
+reportlab = "*"
 
 [dev-packages]
 

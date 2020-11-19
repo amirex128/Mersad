@@ -20,7 +20,7 @@ class Rule(models.Model):
     vehicle_code = models.CharField(max_length=500)
     vehicle_driver = models.CharField(max_length=500)
     description = models.CharField(max_length=500)
-    created_at = models.CharField(max_length=500)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         db_table = 'rules'
