@@ -18,8 +18,8 @@ class CrimeSerializer(serializers.ModelSerializer):
 class AccusedSerializer(serializers.ModelSerializer):
     # در صورتی که این فیلد اضافه شود در خروجی جدول مرتبط رو هم برمیگردونه فقط باید نام این فیلد با اسم فیلد related_name
     # داخل مدل یکی باشد
-    crimes = CrimeSerializer(many=True, read_only=True)
-    crime = CrimeSerializer(write_only=True)
+    # crimes = CrimeSerializer(many=True, read_only=True)
+    # crime = CrimeSerializer(write_only=True)
 
     class Meta:
         model = Accused
@@ -34,8 +34,8 @@ class AccusedSerializer(serializers.ModelSerializer):
     #     else:
     #         raise ValidationError('Your phone number is not valid')
 
-    def create(self, validated_data):
-        crimes = validated_data.pop('crime')
-        accused = Accused.objects.create(**validated_data)
-        Crime.objects.create(**crimes, accused=accused)
-        return accused
+    # def create(self, validated_data):
+    #     crimes = validated_data.pop('crime')
+    #     accused = Accused.objects.create(**validated_data)
+    #     Crime.objects.create(**crimes, accused=accused)
+    #     return accused

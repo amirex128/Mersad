@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="min-height: 700px">
+                <div class="card-header">
+                    <h4 class="card-title">لیست اعضاء گردان</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show px-4 ">
+                    <div class="table-responsive box-shadow-1">
+                        <table class="table ">
+                            <thead class="bg-primary white">
+                            <tr>
+                                <th>#</th>
+                                <th>نام</th>
+                                <th>نام خانوادگی</th>
+                                <th>کد ملی</th>
+                                <th>مسٔولیت</th>
+                                <th>پایگاه</th>
+                                <th>تاریخ تولد</th>
+                                <th>تنظیمات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% if members %}
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>مارک</td>
+                                    <td>اوتو</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td>
+                                        <div class="btn-group mr-1 mb-1">
+                                            <button type="button" class="btn btn-info btn-min-width dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                اطلاعات
+                                            </button>
+                                            <div class="dropdown-menu" x-placement="bottom-start"
+                                                 style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+                                                <a class="dropdown-item" href="#">نمایش اطلاعات</a>
+                                                <a class="dropdown-item" href="#">ویرایش</a>
+                                                <a class="dropdown-item" href="#">حذف</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                <td colspan="8" class="text-center">
+                                    هیج عضوی وجود ندارد
+                                </td>
+                                </tr>
+                            {% endif %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

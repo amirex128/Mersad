@@ -17,6 +17,9 @@ django-extensions = "*"
 jupyter = "*"
 werkzeug = "*"
 reportlab = "*"
+django-cors-headers = "*"
+jdatetime = "*"
+persiantools = "*"
 
 [dev-packages]
 
